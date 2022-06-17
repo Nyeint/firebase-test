@@ -5,7 +5,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class FirebaseMethods{
   uploadUserInfo(userMap){
-    print("DatabaseMethods  $userMap");
     FirebaseFirestore.instance.collection('users').doc(userMap['uid'])
         .set(userMap).catchError((e){
       print("Register to Firebase");
